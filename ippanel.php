@@ -2,14 +2,16 @@
 /*
  * Max Base
  * https://github.com/BaseMax/PHP-Ippanel-SMS
- * 21 Sep 2021
+ * 21 Sep 2021, 22 Sep 2021
  */
 
 class SmsIppanel {
 	private $key_id = '';
 	private $pattern_id = '';
 	private $number = '';
-	private $url = "https://ippanel.com/services.jspd";
+
+	// private $url = "https://ippanel.com/services.jspd";
+	private $url = "http://ippanel.com:8080";
 
 	public function setKey($key) {
 		$this->key_id = $key;
@@ -31,7 +33,7 @@ class SmsIppanel {
 			'fnum'=>$this->number,
 			'tnum'=>$to,
 
-			'p1'=>'verification',
+			'p1'=>'verification-code',
 			'v1'=>$code,
 		];
 		// print_r($_params);
@@ -42,9 +44,16 @@ class SmsIppanel {
 		}
 		$params = rtrim($params, "&");
 
-		$handler = curl_init($this->url);
-		curl_setopt($handler, CURLOPT_CUSTOMREQUEST, "GET");
-		curl_setopt($handler, CURLOPT_POSTFIELDS, $params);
+		// print $this->url."\n";
+		// print $params."\n";
+
+		// print $this->url . '?' . $params . "\n";
+
+		$handler = curl_init($this->url . '?' . $params);
+
+		// $handler = curl_init($this->url);
+		// curl_setopt($handler, CURLOPT_CUSTOMREQUEST, "GET");
+		// curl_setopt($handler, CURLOPT_POSTFIELDS, $params);
 		curl_setopt($handler, CURLOPT_RETURNTRANSFER, true);
 		$response = curl_exec($handler);
 
