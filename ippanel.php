@@ -11,15 +11,15 @@ class SmsIppanel {
 	private $number = '';
 	private $url = "https://ippanel.com/services.jspd";
 
-	public setKey($key) {
+	public function setKey($key) {
 		$this->key_id = $key;
 	}
 
-	public setPattern($pattern) {
+	public function setPattern($pattern) {
 		$this->pattern_id = $pattern;
 	}
 
-	public setNumber($number) {
+	public function setNumber($number) {
 		$this->number = $number;
 	}
 
