@@ -1,4 +1,10 @@
 <?php
+/*
+ * Max Base
+ * https://github.com/BaseMax/PHP-Ippanel-SMS
+ * 21 Sep 2021
+ */
+
 class SmsIppanel {
 	private $key_id = '';
 	private $pattern_id = '';
