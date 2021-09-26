@@ -4,9 +4,9 @@ A PHP-based class to communicate with `ippanel.com` webservice to send a fast SM
 
 ## Example
 
-Take a look at `example.php` file:
+Take a look at the `example.php` file:
 
-```
+```php
 <?php
 // Load the class
 require "ippanel.php";
