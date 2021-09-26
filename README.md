@@ -26,3 +26,6 @@ var_dump($res);
 ```
 
 http://ippanel.com/
+
+© Copyright 2021, Max Base
+
